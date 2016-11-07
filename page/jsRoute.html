@@ -36,6 +36,7 @@
         console.log(color);
     }
     function setHtmlContainer(page) {
+        var body = document.getElementsByTagName('body')[0];
         if(page=''){
             body.innerHTML('这是一个白色的页面！<a href="#/green">green</a>' +
                     '<a href="#/blue">blue</a>' +
@@ -61,12 +62,15 @@
     });
     Route.open('/green', function () {
         change('green');
+        setHtmlContainer('green');
     });
     Route.open('/blue', function () {
         change('blue');
+        setHtmlContainer('blue');
     });
     Route.open('/yellow', function () {
         change('yellow');
+        setHtmlContainer('yellow')
     });
 
 </script>
