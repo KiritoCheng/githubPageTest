@@ -4,6 +4,13 @@
     font-style:normal;
     font-weight:400;
 }
-html{
+*{
+    margin:0;
+    padding:0;
+}
+.body{
+    min-width: 100%;
+    min-height: 100%;
     font-family: annie-use-your-telescope,'KaiTi';
+    background: url("../img/background.jpg") no-repeat left center;
 }
