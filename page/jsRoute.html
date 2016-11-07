@@ -28,15 +28,36 @@
     };
     window.Route = new Route();
 
+    console.log(window.Route);
 
     function change(color) {
         var body = document.getElementsByTagName('body')[0];
         body.style.backgroundColor = color;
         console.log(color);
     }
+    function setHtmlContainer(page) {
+        if(page=''){
+            body.innerHTML('这是一个白色的页面！<a href="#/green">green</a>' +
+                    '<a href="#/blue">blue</a>' +
+                    '<a href="#/yellow">yellow</a>')
+        }else if(page=='green'){
+            body.innerHTML('这是一个绿色的页面！<a href="">white</a>' +
+                    '<a href="#/blue">blue</a>' +
+                    '<a href="#/yellow">yellow</a>')
+        }else if(page=='blue'){
+            body.innerHTML('这是一个蓝色的页面！<a href="">white</a>' +
+                    '<a href="#/green">green</a>' +
+                    '<a href="#/yellow">yellow</a>')
+        }else {
+            body.innerHTML('这是一个黄色的页面！<a href="">white</a>' +
+                    '<a href="#/green">green</a>' +
+                    '<a href="#/blue">yellow</a>')
+        }
+    }
 
     Route.open('/', function () {
         change('');
+        setHtmlContainer('');
     });
     Route.open('/green', function () {
         change('green');
