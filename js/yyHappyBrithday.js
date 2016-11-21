@@ -4,7 +4,6 @@
 
 var srtCanRun = true;
 window.onload = function () {
-    $('body').fadeIn(350);
     var scroll = document.getElementsByClassName("scroll")[0];  //ie不兼容，换成id会成功
     var panel = document.getElementsByClassName("panel");   //ie不兼容，换成id会成功
 
@@ -13,6 +12,7 @@ window.onload = function () {
     for (var i = 0; i < panel.length; i++) {
         panel[i].style.height = clientH + "px";
     }
+    $('body').fadeIn(350);
     /*下面是关于鼠标滚动*/
     var inputC = document.getElementsByTagName("input");
     var wheel = function (event) {
