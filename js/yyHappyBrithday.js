@@ -1,8 +1,10 @@
 /**
  * Created by Kirito on 2016/11/22.
  */
+
+var srtCanRun = true;
 window.onload = function () {
-    $('.container').fadeIn(350);
+    $('body').fadeIn(350);
     var scroll = document.getElementsByClassName("scroll")[0];  //ie不兼容，换成id会成功
     var panel = document.getElementsByClassName("panel");   //ie不兼容，换成id会成功
 
@@ -33,6 +35,9 @@ window.onload = function () {
         window.addEventListener('DOMMouseScroll', wheel, false);
     }
     window.onmousewheel = wheel;
+    if (localStorage.leaveworld != '' && localStorage.leaveworld !== undefined) {
+        $('#leaveWordDiv').html('<p>' + localStorage.leaveworld + '</p>')
+    }
 };
 
 function handle(delta, arr) {
@@ -43,7 +48,9 @@ function handle(delta, arr) {
         }
     }
     if (num == 2) {
-        strt()
+        if (srtCanRun) {
+            strt();
+        }
     }
     if (delta > 0 && num > 0) {     //向上滚动
         num--;
@@ -60,6 +67,13 @@ function leaveWord() {
         $('#zhizhang').html('说了别骂我智障[掀桌]').fadeIn(350);
         return;
     }
+    if (leaveWord == '') {
+        $('#zhizhang').html('输入内容再点击').fadeIn(350);
+        return;
+    }
+    localStorage.leaveworld = leaveWord;
+    $('#leaveWordDiv').html('<p>' + localStorage.leaveworld + '</p>')
+    $('#huaji').slideDown(350)
 }
 
 var offsetX = $("#loveHeart").width() / 2;
@@ -73,7 +87,6 @@ together.setMilliseconds(0);
 
 //love start
 function strt() {
-    $('#mainDiv').fadeIn(350);
     if (!document.createElement('canvas').getContext) {
         var msg = document.createElement("div");
         msg.id = "errorMsg";
@@ -94,4 +107,14 @@ function strt() {
         adjustCodePosition();
         $("#code").typewriter();
     }
+    srtCanRun = false;
+}
+//播放
+function playmusic(me) {
+    $('embed').css('display', 'block');
+    $(me).fadeOut(350);
+    $('#danInfo').html('你打破神蛋了！ლ(╹◡╹ლ)，从此一个美丽的生命诞生于此！').fadeIn(350)
+    $('#danInfo').animate({top: '40px'}, 350, function () {
+        $('#caret').fadeIn(350)
+    });
 }
