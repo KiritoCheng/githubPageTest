@@ -2,6 +2,7 @@
  * Created by Kirito on 2016/11/22.
  */
 window.onload = function () {
+    $('.nav').fadeIn(350);
     var scroll = document.getElementsByClassName("scroll")[0];  //ie不兼容，换成id会成功
     var panel = document.getElementsByClassName("panel");   //ie不兼容，换成id会成功
 
@@ -41,6 +42,9 @@ function handle(delta, arr) {
             num = i;
         }
     }
+    if (num == 2) {
+        strt()
+    }
     if (delta > 0 && num > 0) {     //向上滚动
         num--;
         arr[num].checked = true;
@@ -55,5 +59,39 @@ function leaveWord() {
     if (leaveWord.indexOf('智障') >= 0) {
         $('#zhizhang').html('说了别骂我智障[掀桌]').fadeIn(350);
         return;
+    }
+}
+
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(1995, 11, 23);
+together.setHours(0);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+//love start
+function strt() {
+    $('#mainDiv').fadeIn(350);
+    if (!document.createElement('canvas').getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none");
+        document.execCommand("stop");
+    } else {
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 5000);
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
     }
 }
