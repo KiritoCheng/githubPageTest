@@ -2,7 +2,7 @@
  * Created by Kirito on 2016/11/22.
  */
 window.onload = function () {
-    $('.nav').fadeIn(350);
+    $('body').fadeIn(350);
     var scroll = document.getElementsByClassName("scroll")[0];  //ie不兼容，换成id会成功
     var panel = document.getElementsByClassName("panel");   //ie不兼容，换成id会成功
 
