@@ -24,7 +24,7 @@ a{
     position:absolute;
     left:0;
     bottom:0;
-    font-family:"Josefin Slab","Myriad pro" ,serif;
+    font-family:"Josefin Slab","Myriad pro" ,serif,'微软雅黑';
 }
 .nav input,.nav a{
     width:20%;

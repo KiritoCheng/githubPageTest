@@ -2,8 +2,8 @@
  * Created by Kirito on 2016/11/22.
  */
 window.onload = function () {
-    var scroll = document.getElementsByClassName("scroll")[0];//ie不兼容，换成id会成功
-    var panel = document.getElementsByClassName("panel");//ie不兼容，换成id会成功
+    var scroll = document.getElementsByClassName("scroll")[0];  //ie不兼容，换成id会成功
+    var panel = document.getElementsByClassName("panel");   //ie不兼容，换成id会成功
 
     var clientH = window.innerHeight;
     scroll.style.height = clientH + "px";
@@ -36,16 +36,24 @@ window.onload = function () {
 
 function handle(delta, arr) {
     var num;
-    for (var i = 0; i < arr.length; i++) {//得到当前checked元素的下标
+    for (var i = 0; i < arr.length; i++) {  //得到当前checked元素的下标
         if (arr[i].checked) {
             num = i;
         }
     }
-    if (delta > 0 && num > 0) {//向上滚动
+    if (delta > 0 && num > 0) {     //向上滚动
         num--;
         arr[num].checked = true;
-    } else if (delta < 0 && num < 4) {//向下滚动
+    } else if (delta < 0 && num < 4) {  //向下滚动
         num++;
         arr[num].checked = true;
+    }
+}
+
+function leaveWord() {
+    var leaveWord = $('#leaveWord').val();
+    if (leaveWord.indexOf('智障') >= 0) {
+        $('#zhizhang').html('说了别骂我智障[掀桌]').fadeIn(350);
+        return;
     }
 }
