@@ -1,0 +1,14 @@
+{
+  "name": "githubTest",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
