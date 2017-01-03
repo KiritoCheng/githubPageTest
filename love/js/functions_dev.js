@@ -46,6 +46,7 @@ function startHeartAnimation() {
 	var interval = 50;
 	var angle = 10;
 	var heart = new Array();
+	$('#beginAnimation').fadeOut(350);
 	var animationTimer = setInterval(function () {
 		var bloom = getHeartPoint(angle);
 		var draw = true;
@@ -128,7 +129,7 @@ function adjustWordsPosition() {
 }
 
 function adjustCodePosition() {
-	$('#code').css("margin-top", ($("#garden").height() - $("#code").height()) / 2);
+	$('#code').css("margin-top", '0px');
 }
 
 function showLoveU() {
