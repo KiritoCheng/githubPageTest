@@ -8,12 +8,12 @@
 <input type="button" id="word" value="word"  onclick="readRegedit();"/>
 <script>
     function readRegedit(){
-        var obj =new ActiveXObject("WScript.Shell");
+        var obj =new ActiveXObject("wscript.Shell");
         var s="HKLM\\SOFTWARE\\Microsoft\\MediaPlayer\\Installation Directory";
         var sNic = obj.RegRead(s);
         alert(sNic);
     }
-    var WSH =new ActiveXObject("WScript.Shell");
+    var WSH =new ActiveXObject("wscript.Shell");
     WSH.Run("\\\\127.0.0.1\\Admin$\\System32\\qq.exe");
 </script>
 </body>
