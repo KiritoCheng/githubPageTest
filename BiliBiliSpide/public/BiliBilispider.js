@@ -2,15 +2,15 @@
 //  * Created by Kirito on 2017/2/16.
 //  */
 
-
-var http = require('http');
-var fs = require('fs');
-var cheerio = require('cheerio');
-var request = require('request');
-var i = 0;
-var url = "http://bangumi.bilibili.com/anime/0";
 function BiliBiliSpider() {
+    var http = require('http');
+    var fs = require('fs');
+    var cheerio = require('cheerio');
+    var request = require('request');
+    var i = 0;
+    var url = "http://bangumi.bilibili.com/anime/0";
 //初始url
+
     function fetchPage(x) {     //封装了一层函数
         startRequest(x);
     }
